@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<!-- Compatibility patch for Vanilla Bionics Expansion. -->
+<Patch>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>[FSF] Vanilla Bionics Expansion</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <!-- Add VBE recipes to base animal thing -->
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[@Name="AnimalThingBase"]/recipes</xpath>
+          <value>
+            <li>InstallFSFBionicPowerArm</li>
+            <li>InstallFSFBionicJaw</li>
+            <li>InstallFSFBionicLung</li>
+            <li>InstallFSFBionicKidney</li>
+            <li>InstallFSFBionicLiver</li>
+            <li>InstallFSFProstheticEye</li>
+            <li>InstallFSFProstheticHand</li>
+            <li>InstallFSFProstheticSpine</li>
+            <li>InstallFSFSimpleProstheticLung</li>
+            <li>InstallFSFSimpleProstheticKidney</li>
+            <li>InstallFSFSimpleProstheticLiver</li>
+            <li>InstallFSFSimpleProstheticStomach</li>
+            <li>InstallFSFArchotechEar</li>
+            <li>InstallFSFArchotechJaw</li>
+            <li>InstallFSFArchotechSpine</li>
+            <li>InstallFSFArchotechHeart</li>
+            <li>InstallFSFArchotechLung</li>
+            <li>InstallFSFArchotechKidney</li>
+            <li>InstallFSFArchotechLiver</li>
+            <li>InstallFSFArchotechStomach</li>
+            <li>InstallFSFArtificialNose</li>
+          </value>
+        </li>
+        <!-- Legs -->
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/RecipeDef[defName="InstallFSFBionicPowerArm"]/appliedOnFixedBodyParts</xpath>
+          <value>
+            <li>Leg</li>
+          </value>
+        </li>
+        <!-- Jaws -->
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/RecipeDef[defName="InstallFSFBionicJaw" or defName="InstallFSFArchotechJaw"]/appliedOnFixedBodyParts</xpath>
+          <value>
+            <li>AnimalJaw</li>
+            <li>Beak</li>
+            <li>SnakeMouth</li>
+            <li>TurtleBeak</li>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>

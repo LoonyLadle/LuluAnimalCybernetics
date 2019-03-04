@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<ModMetaData>
+  <name>Lulu's Animal Cybernetics</name>
+  <author>LoonyLadle</author>
+  <url>https://github.com/LoonyLadle/LuluAnimalCybernetics</url>
+  <supportedVersions>
+    <li>1.0</li>
+  </supportedVersions>
+  <description>Allows installing of vanilla cybernetics on animals.</description>
+</ModMetaData>

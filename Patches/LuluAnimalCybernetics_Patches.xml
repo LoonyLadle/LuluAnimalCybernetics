@@ -1,36 +1,35 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<!-- Allows installing of vanilla cybernetics on animals. -->
 <Patch>
-  <!-- Races_Animal_Base.xml -->
-	<Operation Class="PatchOperationAdd">
-    <xpath>Defs/ThingDef[@Name="AnimalThingBase"]/recipes</xpath>
-    <value>
-      <li>InstallArchotechEye</li>
-      <li>InstallArchotechArm</li>
-      <li>InstallArchotechLeg</li>
-      <li>InstallPowerClaw</li>
-      <li>InstallBionicEye</li>
-      <li>InstallBionicArm</li>
-      <li>InstallBionicLeg</li>
-      <li>InstallBionicSpine</li>
-      <li>InstallBionicHeart</li>
-      <li>InstallBionicStomach</li>
-      <li>InstallBionicEar</li>
-      <li>InstallSimpleProstheticArm</li>
-      <li>InstallSimpleProstheticLeg</li>
-      <li>InstallSimpleProstheticHeart</li>
-      <li>InstallCochlearImplant</li>
-      <li>InstallPegLeg</li>
-      <li>InstallWoodenFoot</li>
-      <li>InstallDenture</li>
-      <li>InstallJoywire</li>
-      <li>InstallPainstopper</li>
-    </value>
-	</Operation>
-  
-  <!-- Recipes_Surgery_Installations.xml -->
   <Operation Class="PatchOperationSequence">
     <operations>
-      <!-- InstallPowerClaw -->
+        <!-- Add vanilla recipes to base animal thing -->
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[@Name="AnimalThingBase"]/recipes</xpath>
+        <value>
+          <li>InstallArchotechEye</li>
+          <li>InstallArchotechArm</li>
+          <li>InstallArchotechLeg</li>
+          <li>InstallPowerClaw</li>
+          <li>InstallBionicEye</li>
+          <li>InstallBionicArm</li>
+          <li>InstallBionicLeg</li>
+          <li>InstallBionicSpine</li>
+          <li>InstallBionicHeart</li>
+          <li>InstallBionicStomach</li>
+          <li>InstallBionicEar</li>
+          <li>InstallSimpleProstheticArm</li>
+          <li>InstallSimpleProstheticLeg</li>
+          <li>InstallSimpleProstheticHeart</li>
+          <li>InstallCochlearImplant</li>
+          <li>InstallPegLeg</li>
+          <li>InstallWoodenFoot</li>
+          <li>InstallDenture</li>
+          <li>InstallJoywire</li>
+          <li>InstallPainstopper</li>
+        </value>
+      </li>
+      <!-- Paws -->
       <li Class="PatchOperationAdd">
         <xpath>Defs/RecipeDef[defName="InstallPowerClaw" or defName="InstallWoodenFoot"]/appliedOnFixedBodyParts</xpath>
         <value>
@@ -38,7 +37,7 @@
           <li>Hoof</li>
         </value>
       </li>
-      <!-- InstallDenture -->
+      <!-- Jaws -->
       <li Class="PatchOperationAdd">
         <xpath>Defs/RecipeDef[defName="InstallDenture"]/appliedOnFixedBodyParts</xpath>
         <value>

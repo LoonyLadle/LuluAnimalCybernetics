@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<!-- Compatibility patch for Vanilla Bionics Expansion. -->
 <Patch>
-  <!-- Compatibility patch for Vanilla Bionics Expansion. -->
   <Operation Class="PatchOperationFindMod">
     <mods>
       <li>[FSF] Vanilla Bionics Expansion</li>
@@ -34,7 +34,7 @@
             <li>InstallFSFArtificialNose</li>
           </value>
         </li>
-        <!-- Limbs -->
+        <!-- Legs -->
         <li Class="PatchOperationAdd">
           <xpath>Defs/RecipeDef[defName="InstallFSFBionicPowerArm"]/appliedOnFixedBodyParts</xpath>
           <value>

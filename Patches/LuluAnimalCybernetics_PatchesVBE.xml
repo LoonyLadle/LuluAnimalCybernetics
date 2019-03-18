@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <Patch>
   <!-- Compatibility patch for Vanilla Bionics Expansion. -->
   <Operation Class="PatchOperationFindMod">
@@ -6,7 +6,6 @@
       <li>[FSF] Vanilla Bionics Expansion</li>
     </mods>
     <match Class="PatchOperationSequence">
-      <success>Always</success>
       <operations>
         <!-- Add VBE recipes to base animal thing -->
         <li Class="PatchOperationAdd">

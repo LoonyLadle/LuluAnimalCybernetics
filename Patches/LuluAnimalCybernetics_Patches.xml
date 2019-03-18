@@ -3,7 +3,7 @@
 <Patch>
   <Operation Class="PatchOperationSequence">
     <operations>
-        <!-- Add vanilla recipes to base animal thing -->
+      <!-- Add vanilla recipes to base animal thing -->
       <li Class="PatchOperationAdd">
         <xpath>Defs/ThingDef[@Name="AnimalThingBase"]/recipes</xpath>
         <value>

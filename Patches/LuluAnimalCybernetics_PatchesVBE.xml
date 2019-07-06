@@ -34,21 +34,11 @@
             <li>InstallFSFArtificialNose</li>
           </value>
         </li>
-        <!-- Legs -->
+        <!-- Power arms are special for much the same reason power claws are. -->
         <li Class="PatchOperationAdd">
           <xpath>Defs/RecipeDef[defName="InstallFSFBionicPowerArm"]/appliedOnFixedBodyParts</xpath>
           <value>
             <li>Leg</li>
-          </value>
-        </li>
-        <!-- Jaws -->
-        <li Class="PatchOperationAdd">
-          <xpath>Defs/RecipeDef[defName="InstallFSFBionicJaw" or defName="InstallFSFArchotechJaw"]/appliedOnFixedBodyParts</xpath>
-          <value>
-            <li>AnimalJaw</li>
-            <li>Beak</li>
-            <li>SnakeMouth</li>
-            <li>TurtleBeak</li>
           </value>
         </li>
       </operations>

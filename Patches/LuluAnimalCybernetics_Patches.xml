@@ -38,7 +38,7 @@
       </li>
       <!-- Arm equivalents -->
       <li Class="PatchOperationInsert">
-        <xpath>Defs/RecipeDef/appliedOnFixedBodyParts/li[text()="Arm"]</xpath>
+        <xpath>Defs/RecipeDef/appliedOnFixedBodyParts/li[text()="Shoulder"]</xpath>
         <value>
           <li>Trunk</li>
         </value>
@@ -63,6 +63,8 @@
       </li>
       <!-- Torso equivalents -->
       <li Class="PatchOperationInsert">
+        <!-- There are no vanilla recipes that apply to the torso; tell RimWorld to ignore that fact. -->
+        <success>Always</success> 
         <xpath>Defs/RecipeDef/appliedOnFixedBodyParts/li[text()="Torso"]</xpath>
         <value>
           <li>Body</li>

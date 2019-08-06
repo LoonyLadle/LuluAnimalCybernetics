@@ -7,7 +7,9 @@ Through the magic of patching, Lulu's Animal Cybernetics allows the installation
 ## Compatibility
 Any mod that adds additional surgery recipes or animals with new body parts will require a compatibility patch to make their additions accessable to Lulu's Animal Cybernetics. Is your favorite mod not supported? Open an issue!
 
-* Vanilla Bionics Extension: fully supported! (2018-12-14)
+* (Recommended) [Lulu's More Surgeries](https://github.com/LoonyLadle/LuluMoreSurgeries): supported externally!
+* (Recommended) [Lulu's Vanilla Surgery Expansion](https://github.com/LoonyLadle/LuluVanillaSurgeryExpansion): supported externally!
+* [Vanilla Bionics Extension](https://steamcommunity.com/sharedfiles/filedetails/?id=1419675146): supported internally! (2018-12-14)
 
 ## Technical Details
 Lulu's Animal Cybernetics functions by adding (almost) all installation recipes found on humans to the recipes of AnimalThingBase, which all animals inherit from. Additionally, all surgeries are patched to be applicable to "equivalent" body parts (so that dentures can be applied to an AnimalJaw, SnakeMouth, etc). Everything this mod does is achieved with a single, relatively small patch file.

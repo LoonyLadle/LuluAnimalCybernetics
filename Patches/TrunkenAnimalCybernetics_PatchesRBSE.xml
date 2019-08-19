@@ -12,27 +12,27 @@
         <li Class="PatchOperationAdd">
           <xpath>Defs/ThingDef[@Name="AnimalThingBase"]/recipes</xpath>
           <value>
-            <li>InstallAdvancedPowerArm</li>
             <li>InstallAdvancedBionicArm</li>
-            <li>InstallAdvancedBionicLeg</li>
-            <li>InstallAdvancedBionicHand</li>
-            <li>InstallAdvancedBionicFoot</li>
-            <li>InstallAdvancedBionicEye</li>
             <li>InstallAdvancedBionicEar</li>
+            <li>InstallAdvancedBionicEye</li>
+            <li>InstallAdvancedBionicFoot</li>
+            <li>InstallAdvancedBionicHand</li>
+            <li>InstallAdvancedBionicLeg</li>
             <li>InstallAdvancedBionicSpine</li>
+            <li>InstallAdvancedPowerArm</li>
+            <li>InstallArtificialNose</li>
+            <li>InstallBionicFoot</li>
+            <li>InstallBionicHand</li>
+            <li>InstallBionicJaw</li>
             <li>InstallExoskeletonSuit</li>
             <li>InstallPowerArm</li>
-            <li>InstallBionicHand</li>
-            <li>InstallBionicFoot</li>
-            <li>InstallBionicJaw</li>
-            <li>InstallSimpleProstheticHand</li>
             <li>InstallSimpleProstheticFoot</li>
-            <li>InstallArtificialNose</li>
+            <li>InstallSimpleProstheticHand</li>
+            <li>InstallSyntheticHeart</li>
+            <li>InstallSyntheticKidney</li>
+            <li>InstallSyntheticLiver</li>
             <li>InstallSyntheticLung</li>
             <li>InstallSyntheticStomach</li>
-            <li>InstallSyntheticLiver</li>
-            <li>InstallSyntheticKidney</li>
-            <li>InstallSyntheticHeart</li>
           </value>
         </li>
         <!-- Legs -->

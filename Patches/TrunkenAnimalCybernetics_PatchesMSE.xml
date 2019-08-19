@@ -12,16 +12,16 @@
         <li Class="PatchOperationAdd">
           <xpath>Defs/ThingDef[@Name="AnimalThingBase"]/recipes</xpath>
           <value>
+            <li>InstallAdvancedPowerArm</li>
+            <li>InstallAdvancedPowerClaw</li>
+            <li>InstallArchotechJaw</li>
+            <li>InstallBionicJaw</li>
+            <li>InstallBionicKidney</li>
+            <li>InstallBionicLiver</li>
+            <li>InstallBionicLung</li>
             <li>InstallEyepatch</li>
             <li>InstallWoodenEar</li>
             <li>InstallWoodenNose</li>
-            <li>InstallBionicLung</li>
-            <li>InstallBionicKidney</li>
-            <li>InstallBionicLiver</li>
-            <li>InstallAdvancedPowerArm</li>
-            <li>InstallAdvancedPowerClaw</li>
-            <li>InstallBionicJaw</li>
-            <li>InstallArchotechJaw</li>
           </value>
         </li>
         <!-- Legs -->

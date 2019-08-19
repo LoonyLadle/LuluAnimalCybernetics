@@ -11,17 +11,17 @@
         <li Class="PatchOperationAdd">
           <xpath>Defs/ThingDef[@Name="AnimalThingBase"]/recipes</xpath>
           <value>
+            <li>InstallGTArm</li>
+            <li>InstallGTDentures</li>
             <li>InstallGTEar</li>
             <li>InstallGTEye</li>
             <li>InstallGTHeart</li>
+            <li>InstallGTLeg</li>
             <li>InstallGTLung</li>
             <li>InstallGTKidney</li>
             <li>InstallGTLiver</li>
             <li>InstallGTStomach</li>
-            <li>InstallGTDentures</li>
             <li>InstallOCExo</li>
-            <li>InstallGTArm</li>
-            <li>InstallGTLeg</li>
           </value>
         </li>
       </operations>

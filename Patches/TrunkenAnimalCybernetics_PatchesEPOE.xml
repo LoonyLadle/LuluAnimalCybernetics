@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<!-- Compatibility patch for Expanded Prosthetics and Organ Engineering. -->
+<Patch>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Expanded Prosthetics and Organ Engineering</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <!-- Add VBE recipes to base animal -->
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[@Name="AnimalThingBase"]/recipes</xpath>
+          <value>
+            <li>InstallPowerArm</li>
+            <li>InstallAdvancedBionicJaw</li>
+            <li>InstallAdvancedPowerArm</li>
+            <li>InstallSimpleProstheticHand</li>
+            <li>InstallSimpleProstheticFoot</li>
+            <li>InstallHydraulicJaw</li>
+            <li>InstallBionicJaw</li>
+            <li>InstallAdvancedBionicJaw</li>
+            <li>InstallSilentJaw</li>
+            <li>InstallSurrogateLung</li>
+            <li>InstallSurrogateStomach</li>
+            <li>InstallSurrogateLiver</li>
+            <li>InstallSurrogateKidney</li>
+            <li>InstallSurrogateHeart</li>
+            <li>InstallSyntheticLung</li>
+            <li>InstallSyntheticStomach</li>
+            <li>InstallSyntheticLiver</li>
+            <li>InstallSyntheticKidney</li>
+            <li>InstallSyntheticHeart</li>
+            <li>InstallLightReceptor</li>
+            <li>InstallWoodenFoot</li>
+            <li>InstallEyePatch</li>
+            <li>InstallEarBandage</li>
+          </value>
+        </li>
+        <!-- Legs -->
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/RecipeDef[defName="InstallPowerArm" or defName="InstallAdvancedPowerArm"]/appliedOnFixedBodyParts</xpath>
+          <value>
+            <li>Leg</li>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>

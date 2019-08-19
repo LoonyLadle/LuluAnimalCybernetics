@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<!-- Compatibility patch for Rah's Bionics and Surgery Expansion -->
+<Patch>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Rah's Bionics and Surgery Expansion</li>
+      <li>RBSE Hardcore Edition</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <!-- Add RBSE recipes to base animal -->
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[@Name="AnimalThingBase"]/recipes</xpath>
+          <value>
+            <li>InstallAdvancedPowerArm</li>
+            <li>InstallAdvancedBionicArm</li>
+            <li>InstallAdvancedBionicLeg</li>
+            <li>InstallAdvancedBionicHand</li>
+            <li>InstallAdvancedBionicFoot</li>
+            <li>InstallAdvancedBionicEye</li>
+            <li>InstallAdvancedBionicEar</li>
+            <li>InstallAdvancedBionicSpine</li>
+            <li>InstallExoskeletonSuit</li>
+            <li>InstallPowerArm</li>
+            <li>InstallBionicArm</li>
+            <li>InstallBionicLeg</li>
+            <li>InstallBionicEye</li>
+            <li>InstallBionicHand</li>
+            <li>InstallBionicFoot</li>
+            <li>InstallBionicEar</li>
+            <li>InstallBionicJaw</li>
+            <li>InstallBionicSpine</li>
+            <li>InstallWoodenFoot</li>
+            <li>InstallCochlearImplant</li>
+            <li>InstallSimpleProstheticLeg</li>
+            <li>InstallSimpleProstheticArm</li>
+            <li>InstallSimpleProstheticHand</li>
+            <li>InstallSimpleProstheticFoot</li>
+            <li>InstallArtificialNose</li>
+            <li>InstallSyntheticLung</li>
+            <li>InstallSyntheticStomach</li>
+            <li>InstallSyntheticLiver</li>
+            <li>InstallSyntheticKidney</li>
+            <li>InstallSyntheticHeart</li>
+          </value>
+        </li>
+        <!-- Legs -->
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/RecipeDef[defName="InstallPowerArm" or defName="InstallAdvancedPowerArm"]/appliedOnFixedBodyParts</xpath>
+          <value>
+            <li>Leg</li>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>

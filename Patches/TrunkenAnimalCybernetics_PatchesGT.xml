@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<!-- Compatibility patch for Glitter Tech. -->
+<Patch>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Glitter Tech</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <!-- Add GT recipes to animal base -->
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[@Name="AnimalThingBase"]/recipes</xpath>
+          <value>
+            <li>InstallGTEar</li>
+            <li>InstallGTEye</li>
+            <li>InstallGTHeart</li>
+            <li>InstallGTLung</li>
+            <li>InstallGTKidney</li>
+            <li>InstallGTLiver</li>
+            <li>InstallGTStomach</li>
+            <li>InstallGTDentures</li>
+            <li>InstallOCExo</li>
+            <li>InstallGTArm</li>
+            <li>InstallGTLeg</li>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>

@@ -18,7 +18,6 @@
             <li>InstallSimpleProstheticFoot</li>
             <li>InstallHydraulicJaw</li>
             <li>InstallBionicJaw</li>
-            <li>InstallAdvancedBionicJaw</li>
             <li>InstallSilentJaw</li>
             <li>InstallSurrogateLung</li>
             <li>InstallSurrogateStomach</li>
@@ -31,7 +30,6 @@
             <li>InstallSyntheticKidney</li>
             <li>InstallSyntheticHeart</li>
             <li>InstallLightReceptor</li>
-            <li>InstallWoodenFoot</li>
             <li>InstallEyePatch</li>
             <li>InstallEarBandage</li>
           </value>

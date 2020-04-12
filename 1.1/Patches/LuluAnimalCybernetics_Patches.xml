@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<!-- Allows installing of vanilla cybernetics on animals. -->
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<!-- Add vanilla recipes to base animal thing -->
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[@Name="AnimalThingBase"]/recipes</xpath>
+				<value>
+					<li>InstallArchotechEye</li>
+					<li>InstallArchotechArm</li>
+					<li>InstallArchotechLeg</li>
+					<li>InstallPowerClaw</li>
+					<li>InstallBionicEye</li>
+					<li>InstallBionicArm</li>
+					<li>InstallBionicLeg</li>
+					<li>InstallBionicSpine</li>
+					<li>InstallBionicHeart</li>
+					<li>InstallBionicStomach</li>
+					<li>InstallBionicEar</li>
+					<li>InstallSimpleProstheticArm</li>
+					<li>InstallSimpleProstheticLeg</li>
+					<li>InstallSimpleProstheticHeart</li>
+					<li>InstallCochlearImplant</li>
+					<li>InstallPegLeg</li>
+					<li>InstallWoodenFoot</li>
+					<li>InstallDenture</li>
+					<li>InstallPainstopper</li>
+					<!-- new surgeries in RimWorld 1.1 -->
+					<li>InstallWoodenHand</li>
+					<!-- <li>InstallDeathAcidifier</li> --> <!-- disabled because animals don't have gear to dissolve so this might cause issues? -->
+
+				</value>
+			</li>
+
+			<!-- Power claws are special; let them be applied to feet even though they are normally hand parts. -->
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/RecipeDef[defName="InstallPowerClaw"]/appliedOnFixedBodyParts</xpath>
+				<value>
+					<li>Paw</li>
+					<li>Hoof</li>
+				</value>
+			</li>
+
+			<!-- Check for Royalty DLC -->
+			<li Class="PatchOperationFindMod">
+				<mods>
+					<li>Royalty</li>
+				</mods>
+				<match Class="PatchOperationSequence">
+					<success>Always</success>
+					<operations>
+						<li Class="PatchOperationAdd">
+
+							<!-- Add Royalty DLC recipes to base animal thing -->
+							<xpath>Defs/ThingDef[@Name="AnimalThingBase"]/recipes</xpath>
+							<value>
+								<!-- <li>InstallPsychicSilencer</li> --> <!-- disabled because animals can't psycast -->
+								<li>InstallPsychicSensitizer</li>
+								<!-- <li>InstallPsychicHarmonizer</li> --> <!-- disabled because animals can't get joy -->
+								<!-- <li>InstallPsychicReader</li> --> <!-- disabled because animals can't negotiate -->
+								<!-- <li>InstallNeurocalculator</li> --> <!-- disabled because animals can't research -->
+								<!-- <li>InstallLearningAssistant</li> --> <!-- disabled because animals can't learn skills -->
+								<!-- <li>InstallGastroAnalyzer</li> --> <!-- disabled because animals can't cook -->
+								<li>InstallImmunoenhancer</li>
+								<li>InstallCoagulator</li>
+								<li>InstallHealingEnhancer</li>
+								<li>InstallToughskinGland</li>
+								<li>InstallArmorskinGland</li>
+								<li>InstallStoneskinGland</li>
+								<li>InstallAestheticShaper</li>
+								<li>InstallAestheticNose</li>
+								<!-- <li>InstallLoveEnhancer</li> --> <!-- disabled because animals can't get the "got some lovin'" mood boost -->
+								<li>InstallDetoxifierStomach</li> <!-- not sure if these food need modifiers will work with animals -->
+								<li>InstallReprocessorStomach</li> <!-- not sure if these food need modifiers will work with animals -->
+								<li>InstallNuclearStomach</li> <!-- not sure if these food need modifiers will work with animals -->
+								<li>InstallCircadianAssistant</li> <!-- not sure if these rest need modifiers will work with animals -->
+								<li>InstallCircadianHalfCycler</li> <!-- not sure if these rest need modifiers will work with animals -->
+								<li>InstallMindscrew</li>
+								<li>InstallDrillArm</li>
+								<li>InstallFieldHand</li>
+								<li>InstallHandTalon</li> <!-- installed on the Hand body part, meaning only monkeys, patch below to extend to other animals -->
+								<li>InstallElbowBlade</li>
+								<li>InstallKneeSpike</li>
+								<li>InstallVenomFangs</li>
+								<li>InstallVenomTalon</li> <!-- installed on the MiddleFingers body part group, meaning only monkeys, can't figure out patch to extend to other animals -->
+								<li>InstallKneeSpike</li>
+								<li>InstallVenomFangs</li>
+							</value>
+						</li>
+
+						<!-- Hand Talons are special; let them be applied to feet even though they are normally hand parts. -->
+						<li Class="PatchOperationAdd">
+							<xpath>Defs/RecipeDef[defName="InstallHandTalon"]/appliedOnFixedBodyParts</xpath>
+							<value>
+								<li>Paw</li>
+								<li>Hoof</li>
+							</value>
+						</li>
+
+					</operations>	
+				</match>
+			</li>
+
+			<!-- Arm equivalents -->
+			<li Class="PatchOperationInsert">
+				<xpath>Defs/RecipeDef/appliedOnFixedBodyParts/li[text()="Shoulder"]</xpath>
+				<value>
+					<li>Trunk</li>
+				</value>
+			</li>
+			
+			<!-- Foot equivalents -->
+			<li Class="PatchOperationInsert">
+				<xpath>Defs/RecipeDef/appliedOnFixedBodyParts/li[text()="Foot"]</xpath>
+				<value>
+					<li>Paw</li>
+					<li>Hoof</li>
+				</value>
+			</li>
+			
+			<!-- Jaw equivalents (added insect mouth) -->
+			<li Class="PatchOperationInsert">
+				<xpath>Defs/RecipeDef/appliedOnFixedBodyParts/li[text()="Jaw"]</xpath>
+				<value>
+					<li>AnimalJaw</li>
+					<li>Beak</li>
+					<li>SnakeMouth</li>
+					<li>TurtleBeak</li>
+					<li>InsectMouth</li>
+				</value>
+			</li>
+			
+			<!-- Leg equivalents (added for insects) disabled for now because a lot of the bionics won't actually work on insects it seems -->
+<!-- 			<li Class="PatchOperationInsert">
+				<xpath>Defs/RecipeDef/appliedOnFixedBodyParts/li[text()="Leg"]</xpath>
+				<value>
+					<li>InsectLeg</li>
+				</value>
+			</li> -->
+			
+			<!-- Teeth equivalents (for new VenomFangs) -->
+			<li Class="PatchOperationInsert">
+				<!-- There are no vanilla recipes that apply to the teeth; tell RimWorld to ignore that fact. -->
+				<success>Always</success> 
+				<xpath>Defs/RecipeDef/appliedOnFixedBodyPartGroups/li[text()="Teeth"]</xpath>
+				<value>
+					<li>Mouth</li>
+					<li>Beak</li>
+					<li>TurtleBeakAttackTool</li>
+				</value>
+			</li>
+			
+			<!-- Torso equivalents (added shell for insects) -->
+			<li Class="PatchOperationInsert">
+				<!-- There are no vanilla recipes that apply to the torso; tell RimWorld to ignore that fact. -->
+				<success>Always</success> 
+				<xpath>Defs/RecipeDef/appliedOnFixedBodyParts/li[text()="Torso"]</xpath>
+				<value>
+					<li>Body</li>
+					<li>SnakeBody</li>
+					<li>TurtleShell</li>
+					<li>Shell</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

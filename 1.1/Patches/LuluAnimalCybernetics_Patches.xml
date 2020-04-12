@@ -131,14 +131,6 @@
 				</value>
 			</li>
 			
-			<!-- Leg equivalents (added for insects) disabled for now because a lot of the bionics won't actually work on insects it seems -->
-<!-- 			<li Class="PatchOperationInsert">
-				<xpath>Defs/RecipeDef/appliedOnFixedBodyParts/li[text()="Leg"]</xpath>
-				<value>
-					<li>InsectLeg</li>
-				</value>
-			</li> -->
-			
 			<!-- Teeth equivalents (for new VenomFangs) -->
 			<li Class="PatchOperationInsert">
 				<!-- There are no vanilla recipes that apply to the teeth; tell RimWorld to ignore that fact. -->

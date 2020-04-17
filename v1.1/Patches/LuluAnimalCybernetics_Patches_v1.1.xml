@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<!-- Allows installing of prosthetics added in RimWorld 1.1 on animals. -->
+<Patch>
+	<!-- Add vanilla recipes to base animal thing -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[@Name="AnimalThingBase"]/recipes</xpath>
+		<value>
+			<li>InstallWoodenHand</li>
+		</value>
+	</Operation>
+</Patch>

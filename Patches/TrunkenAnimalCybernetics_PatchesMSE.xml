@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <!-- Compatibility patch for Medical System Expansion -->
 <Patch>
-  <Operation Class="PatchOperationFindMod">
-    <mods>
-      <li>Medical System Expansion</li>
-    </mods>
-    <match Class="PatchOperationSequence">
-    <success>Always</success>
-      <operations>
-        <!-- Add MSE recipes to animals -->
-        <li Class="PatchOperationAdd">
-          <xpath>Defs/ThingDef[@Name="AnimalThingBase"]/recipes</xpath>
-          <value>
-            <li>InstallAdvancedPowerArm</li>
-            <li>InstallAdvancedPowerClaw</li>
-            <li>InstallArchotechJaw</li>
-            <li>InstallBionicJaw</li>
-            <li>InstallBionicKidney</li>
-            <li>InstallBionicLiver</li>
-            <li>InstallBionicLung</li>
-            <li>InstallEyepatch</li>
-            <li>InstallWoodenEar</li>
-            <li>InstallWoodenNose</li>
-          </value>
-        </li>
-        <!-- Legs -->
-        <li Class="PatchOperationAdd">
-          <xpath>Defs/RecipeDef[defName="InstallAdvancedPowerArm"]/appliedOnFixedBodyParts</xpath>
-          <value>
-            <li>Leg</li>
-          </value>
-        </li>
-      </operations>
-    </match>
-  </Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Medical System Expansion</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+		<success>Always</success>
+			<operations>
+				<!-- Add MSE recipes to animals -->
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[@Name="AnimalThingBase"]/recipes</xpath>
+					<value>
+						<li>InstallAdvancedPowerArm</li>
+						<li>InstallAdvancedPowerClaw</li>
+						<li>InstallArchotechJaw</li>
+						<li>InstallBionicJaw</li>
+						<li>InstallBionicKidney</li>
+						<li>InstallBionicLiver</li>
+						<li>InstallBionicLung</li>
+						<li>InstallEyepatch</li>
+						<li>InstallWoodenEar</li>
+						<li>InstallWoodenNose</li>
+					</value>
+				</li>
+				<!-- Legs -->
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/RecipeDef[defName="InstallAdvancedPowerArm"]/appliedOnFixedBodyParts</xpath>
+					<value>
+						<li>Leg</li>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
 </Patch>

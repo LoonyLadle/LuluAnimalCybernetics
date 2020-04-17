@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <!-- Compatibility patch for Archotech Expanded. -->
 <Patch>
-  <Operation Class="PatchOperationFindMod">
-    <mods>
-      <li>Archotech Expanded</li>
-    </mods>
-    <match Class="PatchOperationSequence">
-      <operations>
-        <!-- Add AE recipes to base animal -->
-        <li Class="PatchOperationAdd">
-          <xpath>Defs/ThingDef[@Name="AnimalThingBase"]/recipes</xpath>
-          <value>
-            <li>InstallArchotechDeathClaw</li>
-            <li>InstallArchotechObliterator</li>
-          </value>
-        </li>
-      </operations>
-    </match>
-  </Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Archotech Expanded</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<!-- Add AE recipes to base animal -->
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[@Name="AnimalThingBase"]/recipes</xpath>
+					<value>
+						<li>InstallArchotechDeathClaw</li>
+						<li>InstallArchotechObliterator</li>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
 </Patch>

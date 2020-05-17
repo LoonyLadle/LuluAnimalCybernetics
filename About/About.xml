@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <ModMetaData>
-  <name>Lulu's Animal Cybernetics</name>
-  <author>LoonyLadle</author>
-  <supportedVersions>
-    <li>1.0</li>
-  </supportedVersions>
-  <url>https://ludeon.com/forums/index.php?topic=49129#msg461331</url>
-  <description>Allows installing of vanilla cybernetics on animals.</description>
+	<name>Lulu's Animal Cybernetics</name>
+	<author>LoonyLadle</author>
+	<packageId>LoonyLadle.RimWorld.AnimalCybernetics</packageId>
+	<description>Allows installing of vanilla cybernetics on animals.</description>
+	<url>https://ludeon.com/forums/index.php?topic=49129</url>
+	<supportedVersions>
+		<li>1.1</li>
+	</supportedVersions>
+	<modDependencies />
+	<loadBefore />
+	<loadAfter />
+	<incompatibleWith />
 </ModMetaData>

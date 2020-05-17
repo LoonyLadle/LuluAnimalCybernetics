@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <!-- Compatibility patch for Archotech Expanded Prosthetics. -->
 <Patch>
-  <Operation Class="PatchOperationFindMod">
-    <mods>
-      <li>Archotech Expanded Prosthetics</li>
-    </mods>
-    <match Class="PatchOperationSequence">
-      <operations>
-        <!-- Add AEP recipes to base animal -->
-        <li Class="PatchOperationAdd">
-          <xpath>Defs/ThingDef[@Name="AnimalThingBase"]/recipes</xpath>
-          <value>
-            <li>InstallAdvancedArchotechLeg</li>
-            <li>InstallAdvancedArchotechArm</li>
-            <li>InstallArchotechBrainMelder</li>
-            <li>InstallArchotechDeathClaw</li>
-            <li>InstallArchotechDenture</li>
-            <li>InstallArchotechEar</li>
-            <li>InstallArchotechHeart</li>
-            <li>InstallArchotechKidney</li>
-            <li>InstallArchotechLiver</li>
-            <li>InstallArchotechLung</li>
-            <li>InstallArchotechObliterator</li>
-            <li>InstallArchotechStomach</li>
-          </value>
-        </li>
-      </operations>
-    </match>
-  </Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Archotech Expanded Prosthetics</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<!-- Add AEP recipes to base animal -->
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[@Name="AnimalThingBase"]/recipes</xpath>
+					<value>
+						<li>InstallAdvancedArchotechLeg</li>
+						<li>InstallAdvancedArchotechArm</li>
+						<li>InstallArchotechBrainMelder</li>
+						<li>InstallArchotechDeathClaw</li>
+						<li>InstallArchotechDenture</li>
+						<li>InstallArchotechEar</li>
+						<li>InstallArchotechHeart</li>
+						<li>InstallArchotechKidney</li>
+						<li>InstallArchotechLiver</li>
+						<li>InstallArchotechLung</li>
+						<li>InstallArchotechObliterator</li>
+						<li>InstallArchotechStomach</li>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
 </Patch>

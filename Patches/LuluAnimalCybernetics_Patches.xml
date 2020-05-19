@@ -1,77 +1,100 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <!-- Allows installing of vanilla cybernetics on animals. -->
 <Patch>
-  <Operation Class="PatchOperationSequence">
-    <operations>
-      <!-- Add vanilla recipes to base animal thing -->
-      <li Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[@Name="AnimalThingBase"]/recipes</xpath>
-        <value>
-          <li>InstallArchotechEye</li>
-          <li>InstallArchotechArm</li>
-          <li>InstallArchotechLeg</li>
-          <li>InstallPowerClaw</li>
-          <li>InstallBionicEye</li>
-          <li>InstallBionicArm</li>
-          <li>InstallBionicLeg</li>
-          <li>InstallBionicSpine</li>
-          <li>InstallBionicHeart</li>
-          <li>InstallBionicStomach</li>
-          <li>InstallBionicEar</li>
-          <li>InstallSimpleProstheticArm</li>
-          <li>InstallSimpleProstheticLeg</li>
-          <li>InstallSimpleProstheticHeart</li>
-          <li>InstallCochlearImplant</li>
-          <li>InstallPegLeg</li>
-          <li>InstallWoodenFoot</li>
-          <li>InstallDenture</li>
-          <li>InstallPainstopper</li>
-        </value>
-      </li>
-      <!-- Power claws are special; let them be applied to feet even though they are normally hand parts. -->
-      <li Class="PatchOperationAdd">
-        <xpath>Defs/RecipeDef[defName="InstallPowerClaw"]/appliedOnFixedBodyParts</xpath>
-        <value>
-          <li>Paw</li>
-          <li>Hoof</li>
-        </value>
-      </li>
-      <!-- Arm equivalents -->
-      <li Class="PatchOperationInsert">
-        <xpath>Defs/RecipeDef/appliedOnFixedBodyParts/li[text()="Shoulder"]</xpath>
-        <value>
-          <li>Trunk</li>
-        </value>
-      </li>
-      <!-- Foot equivalents -->
-      <li Class="PatchOperationInsert">
-        <xpath>Defs/RecipeDef/appliedOnFixedBodyParts/li[text()="Foot"]</xpath>
-        <value>
-          <li>Paw</li>
-          <li>Hoof</li>
-        </value>
-      </li>
-      <!-- Jaw equivalents -->
-      <li Class="PatchOperationInsert">
-        <xpath>Defs/RecipeDef/appliedOnFixedBodyParts/li[text()="Jaw"]</xpath>
-        <value>
-          <li>AnimalJaw</li>
-          <li>Beak</li>
-          <li>SnakeMouth</li>
-          <li>TurtleBeak</li>
-        </value>
-      </li>
-      <!-- Torso equivalents -->
-      <li Class="PatchOperationInsert">
-        <!-- There are no vanilla recipes that apply to the torso; tell RimWorld to ignore that fact. -->
-        <success>Always</success> 
-        <xpath>Defs/RecipeDef/appliedOnFixedBodyParts/li[text()="Torso"]</xpath>
-        <value>
-          <li>Body</li>
-          <li>SnakeBody</li>
-          <li>TurtleShell</li>
-        </value>
-      </li>
-    </operations>
-  </Operation>
+	<!-- Exempt some surgeries from being performed on animals.. -->
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/RecipeDef[
+			defName = "InstallDeathAcidifier" or
+			defName = "InstallJoywire"
+		]</xpath>
+		<value>
+			<li Class="LoonyLadle.AnimalCybernetics.DisallowAnimalsExt" />
+		</value>
+	</Operation>
+	<!-- Exemptions for Royalty prosthetics. -->
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Royalty</li>
+		</mods>
+		<match Class="PatchOperationAddModExtension">
+			<xpath>Defs/RecipeDef[
+				defName = "InstallPsychicSilencer" or
+				defName = "InstallPsychicSensitizer" or
+				defName = "InstallPsychicHarmonizer" or
+				defName = "InstallPsychicReader" or
+				defName = "InstallNeurocalculator" or
+				defName = "InstallLearningAssistant" or
+				defName = "InstallGastroAnalyzer" or
+				defName = "InstallAestheticShaper" or
+				defName = "InstallAestheticNose" or
+				defName = "InstallLoveEnhancer" or
+				defName = "InstallDrillArm" or
+				defName = "InstallFieldHand"
+			]</xpath>
+			<value>
+				<li Class="LoonyLadle.AnimalCybernetics.DisallowAnimalsExt" />
+			</value>
+		</match>
+	</Operation>
+
+	<!-- Power claws are special; let them be applied to feet even though they are normally hand parts. -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/RecipeDef[defName="InstallPowerClaw"]/appliedOnFixedBodyParts</xpath>
+		<value>
+			<li>Paw</li>
+			<li>Hoof</li>
+		</value>
+	</Operation>
+	<!-- Arm equivalents -->
+	<Operation Class="PatchOperationInsert">
+		<xpath>Defs/RecipeDef/appliedOnFixedBodyParts/li[text()="Shoulder"]</xpath>
+		<value>
+			<li>Trunk</li>
+		</value>
+	</Operation>
+	<!-- Foot equivalents -->
+	<Operation Class="PatchOperationInsert">
+		<xpath>Defs/RecipeDef/appliedOnFixedBodyParts/li[text()="Foot"]</xpath>
+		<value>
+			<li>Paw</li>
+			<li>Hoof</li>
+		</value>
+	</Operation>
+	<!-- Heart equivalents -->
+	<Operation Class="PatchOperationInsert">
+		<xpath>Defs/RecipeDef/appliedOnFixedBodyParts/li[text()="Heart"]</xpath>
+		<value>
+			<li>InsectHeart</li>
+		</value>
+	</Operation>
+	<!-- Jaw equivalents -->
+	<Operation Class="PatchOperationInsert">
+		<xpath>Defs/RecipeDef/appliedOnFixedBodyParts/li[text()="Jaw"]</xpath>
+		<value>
+			<li>AnimalJaw</li>
+			<li>Beak</li>
+			<li>InsectMouth</li>
+			<li>SnakeMouth</li>
+			<li>TurtleBeak</li>
+		</value>
+	</Operation>
+	<!-- Leg equivalents -->
+	<Operation Class="PatchOperationInsert">
+		<xpath>Defs/RecipeDef/appliedOnFixedBodyParts/li[text()="Leg"]</xpath>
+		<value>
+			<li>InsectLeg</li>
+		</value>
+	</Operation>
+	<!-- Torso equivalents -->
+	<Operation Class="PatchOperationInsert">
+		<!-- There are no vanilla recipes that apply to the torso; tell RimWorld to ignore that fact. -->
+		<success>Always</success>
+		<xpath>Defs/RecipeDef/appliedOnFixedBodyParts/li[text()="Torso"]</xpath>
+		<value>
+			<li>Body</li>
+			<li>Shell</li>
+			<li>SnakeBody</li>
+			<li>TurtleShell</li>
+		</value>
+	</Operation>
 </Patch>

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <ModSyncNinjaData>
-  <ID>8e5362dc-7472-4d11-9486-b662a7286c37</ID>
-  <ModName>Lulu's Animal Cybernetics</ModName>
-  <Version>1.2.2</Version>
-  <SaveBreaking>False</SaveBreaking>
-  <Host name="Github">
-    <Owner>LoonyLadle</Owner>
-    <Project>LuluAnimalCybernetics</Project>
-    <AboutDir>About</AboutDir>
-    <DownloadFrom>ModSyncReleases</DownloadFrom>
-    <Branch>master</Branch>
-  </Host>
+	<ID>8e5362dc-7472-4d11-9486-b662a7286c37</ID>
+	<ModName>Lulu's Animal Cybernetics</ModName>
+	<Version>2.0.0</Version>
+	<SaveBreaking>False</SaveBreaking>
+	<Host name="Github">
+		<Owner>LoonyLadle</Owner>
+		<Project>LuluAnimalCybernetics</Project>
+		<AboutDir>About</AboutDir>
+		<DownloadFrom>ModSyncReleases</DownloadFrom>
+		<Branch>master</Branch>
+	</Host>
 </ModSyncNinjaData>

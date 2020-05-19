@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Verse;
 
-namespace LuluAnimalCybernetics
+namespace LoonyLadle.AnimalCybernetics
 {
 	[StaticConstructorOnStartup]
 	public static class MyStaticConstructor

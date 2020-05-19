@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Reflection;
 using Verse;
 
 namespace LoonyLadle.AnimalCybernetics
@@ -18,18 +19,9 @@ namespace LoonyLadle.AnimalCybernetics
 
 			foreach (RecipeDef surgery in surgeries)
 			{
-				SpecialRulesExt specialRules = surgery.GetModExtension<SpecialRulesExt>();
-				List<ThingDef> specificAnimals = animals.ToList();
-
-				if (specialRules != null)
+				if (!surgery.HasModExtension<DisallowAnimalsExt>() && surgery.AllRecipeUsers.Contains(ThingDefOf.Human) && !surgery.AllRecipeUsers.Contains(ThingDefOf.Muffalo))
 				{
-					if (specialRules.disallowAnimals) continue;
-					if (specialRules.disallowInsects) specificAnimals.RemoveAll(a => a.race.FleshType == FleshTypeDefOf.Insectoid);
-				}
-
-				if (surgery.AllRecipeUsers.Contains(ThingDefOf.Human) && !surgery.AllRecipeUsers.Contains(ThingDefOf.Muffalo))
-				{
-					surgery.recipeUsers.AddRange(specificAnimals);
+					surgery.recipeUsers.AddRange(animals);
 
 					if (first)
 					{
@@ -42,6 +34,11 @@ namespace LoonyLadle.AnimalCybernetics
 					}
 
 				}
+			}
+			foreach (ThingDef animal in animals)
+			{
+				// Clear recipe cache; shouldn't be necessary unless other mods have forced it to be created somehow.
+				typeof(ThingDef).GetField("allRecipesCached", BindingFlags.NonPublic | BindingFlags.Instance).SetValue(animal, null);
 			}
 			Log.Message(stringBuilder.ToString());
 		}

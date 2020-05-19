@@ -26,14 +26,29 @@
 					<li>Hoof</li>
 				</value>
 			</li>
+			<!-- Heart equivalents -->
+			<li Class="PatchOperationInsert">
+				<xpath>Defs/RecipeDef/appliedOnFixedBodyParts/li[text()="Heart"]</xpath>
+				<value>
+					<li>InsectHeart</li>
+				</value>
+			</li>
 			<!-- Jaw equivalents -->
 			<li Class="PatchOperationInsert">
 				<xpath>Defs/RecipeDef/appliedOnFixedBodyParts/li[text()="Jaw"]</xpath>
 				<value>
 					<li>AnimalJaw</li>
 					<li>Beak</li>
+					<li>InsectMouth</li>
 					<li>SnakeMouth</li>
 					<li>TurtleBeak</li>
+				</value>
+			</li>
+			<!-- Leg equivalents -->
+			<li Class="PatchOperationInsert">
+				<xpath>Defs/RecipeDef/appliedOnFixedBodyParts/li[text()="Leg"]</xpath>
+				<value>
+					<li>InsectLeg</li>
 				</value>
 			</li>
 			<!-- Torso equivalents -->
@@ -43,6 +58,7 @@
 				<xpath>Defs/RecipeDef/appliedOnFixedBodyParts/li[text()="Torso"]</xpath>
 				<value>
 					<li>Body</li>
+					<li>Shell</li>
 					<li>SnakeBody</li>
 					<li>TurtleShell</li>
 				</value>

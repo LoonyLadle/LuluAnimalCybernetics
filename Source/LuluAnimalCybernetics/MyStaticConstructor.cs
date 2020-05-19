@@ -1,9 +1,7 @@
 ﻿using RimWorld;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using Verse;
 
 namespace LoonyLadle.AnimalCybernetics
@@ -20,9 +18,18 @@ namespace LoonyLadle.AnimalCybernetics
 
 			foreach (RecipeDef surgery in surgeries)
 			{
-				if (surgery.AllRecipeUsers.Contains(ThingDefOf.Human) && !surgery.AllRecipeUsers.Contains(ThingDefOf.Dromedary))
+				SpecialRulesExt specialRules = surgery.GetModExtension<SpecialRulesExt>();
+				List<ThingDef> specificAnimals = animals.ToList();
+
+				if (specialRules != null)
 				{
-					surgery.recipeUsers.AddRange(animals);
+					if (specialRules.disallowAnimals) continue;
+					if (specialRules.disallowInsects) specificAnimals.RemoveAll(a => a.race.FleshType == FleshTypeDefOf.Insectoid);
+				}
+
+				if (surgery.AllRecipeUsers.Contains(ThingDefOf.Human) && !surgery.AllRecipeUsers.Contains(ThingDefOf.Muffalo))
+				{
+					surgery.recipeUsers.AddRange(specificAnimals);
 
 					if (first)
 					{

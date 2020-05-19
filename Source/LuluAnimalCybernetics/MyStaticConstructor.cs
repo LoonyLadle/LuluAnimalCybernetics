@@ -21,6 +21,7 @@ namespace LoonyLadle.AnimalCybernetics
 			{
 				if (!surgery.HasModExtension<DisallowAnimalsExt>() && surgery.AllRecipeUsers.Contains(ThingDefOf.Human) && !surgery.AllRecipeUsers.Contains(ThingDefOf.Muffalo))
 				{
+					if (surgery.recipeUsers == null) surgery.recipeUsers = new List<ThingDef>();
 					surgery.recipeUsers.AddRange(animals);
 
 					if (first)

@@ -1,68 +1,64 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <!-- Allows installing of vanilla cybernetics on animals. -->
 <Patch>
-	<Operation Class="PatchOperationSequence">
-		<operations>
-			<!-- Power claws are special; let them be applied to feet even though they are normally hand parts. -->
-			<li Class="PatchOperationAdd">
-				<xpath>Defs/RecipeDef[defName="InstallPowerClaw"]/appliedOnFixedBodyParts</xpath>
-				<value>
-					<li>Paw</li>
-					<li>Hoof</li>
-				</value>
-			</li>
-			<!-- Arm equivalents -->
-			<li Class="PatchOperationInsert">
-				<xpath>Defs/RecipeDef/appliedOnFixedBodyParts/li[text()="Shoulder"]</xpath>
-				<value>
-					<li>Trunk</li>
-				</value>
-			</li>
-			<!-- Foot equivalents -->
-			<li Class="PatchOperationInsert">
-				<xpath>Defs/RecipeDef/appliedOnFixedBodyParts/li[text()="Foot"]</xpath>
-				<value>
-					<li>Paw</li>
-					<li>Hoof</li>
-				</value>
-			</li>
-			<!-- Heart equivalents -->
-			<li Class="PatchOperationInsert">
-				<xpath>Defs/RecipeDef/appliedOnFixedBodyParts/li[text()="Heart"]</xpath>
-				<value>
-					<li>InsectHeart</li>
-				</value>
-			</li>
-			<!-- Jaw equivalents -->
-			<li Class="PatchOperationInsert">
-				<xpath>Defs/RecipeDef/appliedOnFixedBodyParts/li[text()="Jaw"]</xpath>
-				<value>
-					<li>AnimalJaw</li>
-					<li>Beak</li>
-					<li>InsectMouth</li>
-					<li>SnakeMouth</li>
-					<li>TurtleBeak</li>
-				</value>
-			</li>
-			<!-- Leg equivalents -->
-			<li Class="PatchOperationInsert">
-				<xpath>Defs/RecipeDef/appliedOnFixedBodyParts/li[text()="Leg"]</xpath>
-				<value>
-					<li>InsectLeg</li>
-				</value>
-			</li>
-			<!-- Torso equivalents -->
-			<li Class="PatchOperationInsert">
-				<!-- There are no vanilla recipes that apply to the torso; tell RimWorld to ignore that fact. -->
-				<success>Always</success> 
-				<xpath>Defs/RecipeDef/appliedOnFixedBodyParts/li[text()="Torso"]</xpath>
-				<value>
-					<li>Body</li>
-					<li>Shell</li>
-					<li>SnakeBody</li>
-					<li>TurtleShell</li>
-				</value>
-			</li>
-		</operations>
+	<!-- Power claws are special; let them be applied to feet even though they are normally hand parts. -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/RecipeDef[defName="InstallPowerClaw"]/appliedOnFixedBodyParts</xpath>
+		<value>
+			<li>Paw</li>
+			<li>Hoof</li>
+		</value>
+	</Operation>
+	<!-- Arm equivalents -->
+	<Operation Class="PatchOperationInsert">
+		<xpath>Defs/RecipeDef/appliedOnFixedBodyParts/li[text()="Shoulder"]</xpath>
+		<value>
+			<li>Trunk</li>
+		</value>
+	</Operation>
+	<!-- Foot equivalents -->
+	<Operation Class="PatchOperationInsert">
+		<xpath>Defs/RecipeDef/appliedOnFixedBodyParts/li[text()="Foot"]</xpath>
+		<value>
+			<li>Paw</li>
+			<li>Hoof</li>
+		</value>
+	</Operation>
+	<!-- Heart equivalents -->
+	<Operation Class="PatchOperationInsert">
+		<xpath>Defs/RecipeDef/appliedOnFixedBodyParts/li[text()="Heart"]</xpath>
+		<value>
+			<li>InsectHeart</li>
+		</value>
+	</Operation>
+	<!-- Jaw equivalents -->
+	<Operation Class="PatchOperationInsert">
+		<xpath>Defs/RecipeDef/appliedOnFixedBodyParts/li[text()="Jaw"]</xpath>
+		<value>
+			<li>AnimalJaw</li>
+			<li>Beak</li>
+			<li>InsectMouth</li>
+			<li>SnakeMouth</li>
+			<li>TurtleBeak</li>
+		</value>
+	</Operation>
+	<!-- Leg equivalents -->
+	<Operation Class="PatchOperationInsert">
+		<xpath>Defs/RecipeDef/appliedOnFixedBodyParts/li[text()="Leg"]</xpath>
+		<value>
+			<li>InsectLeg</li>
+		</value>
+	</Operation>
+	<!-- Torso equivalents -->
+	<Operation Class="PatchOperationInsert">
+		<!-- There are no vanilla recipes that apply to the torso; tell RimWorld to ignore that fact. -->
+		<success>Always</success> 
+		<xpath>Defs/RecipeDef/appliedOnFixedBodyParts/li[text()="Torso"]</xpath>
+		<value>
+			<li>Body</li>
+			<li>Shell</li>
+			<li>SnakeBody</li>
+			<li>TurtleShell</li>
+		</value>
 	</Operation>
 </Patch>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<!-- Compatibility patch for Advanced Bionics Expansion. -->
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>[FSF] Advanced Bionics Expansion</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<!-- Add Advanced Bionics Expansion recipes to base animal -->
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[@Name="AnimalThingBase"]/recipes</xpath>
+					<value>
+						<li>InstallFSFAdvBionicArm</li>
+						<li>InstallFSFAdvBionicPowerArm</li>
+						<li>InstallFSFAdvBionicTaserArm</li>
+						<li>InstallFSFAdvBionicLeg</li>
+						<li>InstallFSFAdvBionicJaw</li>
+						<li>InstallFSFAdvBionicEye</li>
+						<li>InstallFSFAdvBionicEar</li>
+						<li>InstallFSFAdvBionicSpine</li>
+						<li>InstallFSFAdvBionicHeart</li>
+						<li>InstallFSFAdvBionicLung</li>
+						<li>InstallFSFAdvBionicKidney</li>
+						<li>InstallFSFAdvBionicLiver</li>
+						<li>InstallFSFAdvBionicStomach</li>
+					</value>
+				</li>
+				<!-- Legs -->
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/RecipeDef[defName="InstallFSFAdvBionicPowerArm"]/appliedOnFixedBodyParts</xpath>
+					<value>
+						<li>Leg</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/RecipeDef[defName="InstallFSFAdvBionicTaserArm"]/appliedOnFixedBodyParts</xpath>
+					<value>
+						<li>Leg</li>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>

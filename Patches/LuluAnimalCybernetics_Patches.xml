@@ -1,6 +1,46 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <!-- Allows installing of vanilla cybernetics on animals. -->
 <Patch>
+	<!-- Exempt some surgeries from being performed on animals.. -->
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/RecipeDef[
+			defName = "InstallDeathAcidifier" or
+			defName = "InstallJoywire"
+		]</xpath>
+		<value>
+			<li Class="LoonyLadle.AnimalCybernetics.SpecialRulesExt">
+				<disallowAnimals>true</disallowAnimals>
+			</li>
+		</value>
+	</Operation>
+	<!-- Exemptions for Royalty prosthetics. -->
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Royalty</li>
+		</mods>
+		<match Class="PatchOperationAddModExtension">
+			<xpath>Defs/RecipeDef[
+				defName = "InstallPsychicSilencer" or
+				defName = "InstallPsychicSensitizer" or
+				defName = "InstallPsychicHarmonizer" or
+				defName = "InstallPsychicReader" or
+				defName = "InstallNeurocalculator" or
+				defName = "InstallLearningAssistant" or
+				defName = "InstallGastroAnalyzer" or
+				defName = "InstallAestheticShaper" or
+				defName = "InstallAestheticNose" or
+				defName = "InstallLoveEnhancer" or
+				defName = "InstallDrillArm" or
+				defName = "InstallFieldHand"
+			]</xpath>
+			<value>
+				<li Class="LoonyLadle.AnimalCybernetics.SpecialRulesExt">
+					<disallowAnimals>true</disallowAnimals>
+				</li>
+			</value>
+		</match>
+	</Operation>
+
 	<!-- Power claws are special; let them be applied to feet even though they are normally hand parts. -->
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/RecipeDef[defName="InstallPowerClaw"]/appliedOnFixedBodyParts</xpath>

@@ -15,6 +15,8 @@ namespace LoonyLadle.AnimalCybernetics
 			IEnumerable<RecipeDef> surgeries = DefDatabase<RecipeDef>.AllDefs.Where(r => r.IsSurgery);
 			IEnumerable<ThingDef> animals = DefDatabase<ThingDef>.AllDefs.Where(t => t.race?.Animal ?? false);
 			StringBuilder stringBuilder = new StringBuilder("[LuluAnimalCybernetics] Dynamic patched the following defs: ");
+			FieldInfo allRecipesCached = typeof(ThingDef).GetField("allRecipesCached", BindingFlags.NonPublic | BindingFlags.Instance);
+
 			bool first = true;
 
 			foreach (RecipeDef surgery in surgeries)
@@ -39,7 +41,7 @@ namespace LoonyLadle.AnimalCybernetics
 			foreach (ThingDef animal in animals)
 			{
 				// Clear recipe cache; shouldn't be necessary unless other mods have forced it to be created somehow.
-				typeof(ThingDef).GetField("allRecipesCached", BindingFlags.NonPublic | BindingFlags.Instance).SetValue(animal, null);
+				allRecipesCached.SetValue(animal, null);
 			}
 			Log.Message(stringBuilder.ToString());
 		}
